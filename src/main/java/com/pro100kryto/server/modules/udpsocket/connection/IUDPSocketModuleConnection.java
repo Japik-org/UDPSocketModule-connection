@@ -12,7 +12,7 @@ public interface IUDPSocketModuleConnection extends IModuleConnection {
 
     boolean hasNextPacket();
     @Nullable
-    void getNextPacket();
+    Packet getNextPacket();
     void removeAllPackets();
 
     void send(Packet packet) throws IOException;
