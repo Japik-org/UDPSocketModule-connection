@@ -1,7 +1,7 @@
 package com.pro100kryto.server.modules.udpsocket.connection;
 
 import com.pro100kryto.server.module.IModuleConnection;
-import com.pro100kryto.server.utils.datagram.packets.Packet;
+import com.pro100kryto.server.utils.datagram.packet.Packet;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
@@ -13,7 +13,7 @@ public interface IUDPSocketModuleConnection extends IModuleConnection {
     boolean hasNextPacket();
     @Nullable
     Packet getNextPacket();
-    void removeAllPackets();
+    void recycleAllPackets();
 
     void send(Packet packet) throws IOException;
     void sendAndRecycle(Packet packet) throws IOException;
