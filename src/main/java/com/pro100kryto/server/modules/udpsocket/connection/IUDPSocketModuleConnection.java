@@ -5,16 +5,17 @@ import com.pro100kryto.server.utils.datagram.packet.DatagramPacketWrapper;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
+import java.rmi.RemoteException;
 
 public interface IUDPSocketModuleConnection extends IModuleConnection {
-    void setPacketListener(ISocketListener listener);
-    void removePacketListener();
+    void setPacketListener(ISocketListener listener) throws RemoteException;
+    void removePacketListener() throws RemoteException;
 
-    boolean hasNextPacket();
+    boolean hasNextPacket() throws RemoteException;
     @Nullable
-    DatagramPacketWrapper getNextPacket();
-    void recycleAllPackets();
+    DatagramPacketWrapper getNextPacket() throws RemoteException;
+    void recycleAllPackets() throws RemoteException;
 
-    void send(DatagramPacketWrapper packet) throws IOException;
-    void sendAndRecycle(DatagramPacketWrapper packet) throws IOException;
+    void send(DatagramPacketWrapper packet) throws RemoteException, IOException;
+    void sendAndRecycle(DatagramPacketWrapper packet) throws RemoteException, IOException;
 }
