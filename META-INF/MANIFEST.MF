@@ -1,4 +1,7 @@
 Manifest-Version: 1.0
+
+Name: Module-Shared
+Subtype: UDPSocket
+Version: 1.1.1
 Base-Package: com.pro100kryto.server
-Connect-Utils: datagram.jar
-Connect-Modules: PacketPool
+Lib-Shared-Jar: p1k-server-datagram-1.2.1.jar
